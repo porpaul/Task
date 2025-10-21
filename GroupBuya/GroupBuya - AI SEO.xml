@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2023-07-12T17:24:31.690991</Date>
+    <Author>admin</Author>
+    <URI>\GroupBuya - AI SEO</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <UserId>S-1-5-18</UserId>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <MultipleInstancesPolicy>StopExisting</MultipleInstancesPolicy>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+  </Settings>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2023-07-12T17:20:49</StartBoundary>
+      <ScheduleByWeek>
+        <WeeksInterval>1</WeeksInterval>
+        <DaysOfWeek>
+          <Sunday />
+        </DaysOfWeek>
+      </ScheduleByWeek>
+    </CalendarTrigger>
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>C:\project\yii2\GroupBuya\yii.bat</Command>
+      <Arguments>seo/aiseo</Arguments>
+      <WorkingDirectory>C:\project\yii2\GroupBuya\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\yii2\GroupBuya\yii.bat</Command>
+      <Arguments>seo/jetso</Arguments>
+      <WorkingDirectory>C:\project\yii2\GroupBuya\</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

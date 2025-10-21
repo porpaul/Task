@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2011-11-22T00:04:50.8420954</Date>
+    <Author>administrator</Author>
+    <URI>\SL886 - Price Import</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <UserId>S-1-5-18</UserId>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <ExecutionTimeLimit>PT12H</ExecutionTimeLimit>
+    <MultipleInstancesPolicy>Parallel</MultipleInstancesPolicy>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+  </Settings>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2011-11-22T21:30:00</StartBoundary>
+      <Repetition>
+        <Interval>PT30M</Interval>
+        <Duration>PT2H</Duration>
+      </Repetition>
+      <ScheduleByWeek>
+        <WeeksInterval>1</WeeksInterval>
+        <DaysOfWeek>
+          <Monday />
+          <Tuesday />
+          <Wednesday />
+          <Thursday />
+          <Friday />
+        </DaysOfWeek>
+      </ScheduleByWeek>
+    </CalendarTrigger>
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>C:\project\yii2\sl886\yii.bat</Command>
+      <Arguments>importstockprice</Arguments>
+      <WorkingDirectory>C:\project\yii2\sl886\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\yii2\SL886\yii.bat</Command>
+      <Arguments>importstockprice checkprevious</Arguments>
+      <WorkingDirectory>C:\project\yii2\SL886\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\mcp-client\scripts\sl886\fix_split_dividend.bat</Command>
+      <WorkingDirectory>C:\project\mcp-client\</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

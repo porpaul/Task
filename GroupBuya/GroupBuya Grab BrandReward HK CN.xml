@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2020-12-09T17:15:02.3845055</Date>
+    <Author>admin</Author>
+    <URI>\GroupBuya Grab BrandReward HK CN</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <UserId>S-1-5-18</UserId>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+  </Settings>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2020-12-09T02:00:00</StartBoundary>
+      <Enabled>false</Enabled>
+      <ScheduleByWeek>
+        <WeeksInterval>1</WeeksInterval>
+        <DaysOfWeek>
+          <Sunday />
+          <Wednesday />
+        </DaysOfWeek>
+      </ScheduleByWeek>
+    </CalendarTrigger>
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>C:\project\yii2\GroupBuya\yii.bat</Command>
+      <Arguments>grabpromocode brandreward hk</Arguments>
+      <WorkingDirectory>C:\project\yii2\GroupBuya\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\yii2\GroupBuya\yii.bat</Command>
+      <Arguments>grabpromocode brandreward cn</Arguments>
+      <WorkingDirectory>C:\project\yii2\GroupBuya\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\yii2\GroupBuya\yii.bat</Command>
+      <Arguments>grabpromocode brandreward hk_eng</Arguments>
+      <WorkingDirectory>C:\project\yii2\GroupBuya</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

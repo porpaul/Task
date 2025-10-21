@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2011-11-21T23:36:46.9260609</Date>
+    <Author>administrator</Author>
+    <URI>\SL886 - uspImportHKEXNews</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <UserId>S-1-5-21-463758137-2802981960-3536458678-1002</UserId>
+      <LogonType>Password</LogonType>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <ExecutionTimeLimit>PT1H</ExecutionTimeLimit>
+    <MultipleInstancesPolicy>Queue</MultipleInstancesPolicy>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+  </Settings>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2011-11-21T07:00:00</StartBoundary>
+      <Repetition>
+        <Interval>PT5M</Interval>
+        <Duration>PT18H</Duration>
+      </Repetition>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>C:\project\yii2\sl886\yii.bat</Command>
+      <Arguments>importhkexnews</Arguments>
+      <WorkingDirectory>C:\project\yii2\sl886\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\yii2\SL886\exec\grabhkexnews.bat</Command>
+      <WorkingDirectory>C:\project\yii2\SL886\exec\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\yii2\SL886\yii.bat</Command>
+      <Arguments>hkexnewstext/updateheader</Arguments>
+      <WorkingDirectory>C:\project\yii2\SL886\</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

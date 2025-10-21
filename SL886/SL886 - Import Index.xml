@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2018-06-19T17:18:03.102286</Date>
+    <Author>WIN2019\admin</Author>
+    <URI>\SL886 - Import Index</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <UserId>S-1-5-18</UserId>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <MultipleInstancesPolicy>StopExisting</MultipleInstancesPolicy>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+  </Settings>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2018-06-19T00:00:00</StartBoundary>
+      <Repetition>
+        <Interval>PT1M</Interval>
+        <Duration>P1D</Duration>
+      </Repetition>
+      <ScheduleByWeek>
+        <WeeksInterval>1</WeeksInterval>
+        <DaysOfWeek>
+          <Monday />
+          <Tuesday />
+          <Wednesday />
+          <Thursday />
+          <Friday />
+        </DaysOfWeek>
+      </ScheduleByWeek>
+    </CalendarTrigger>
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>C:\project\yii2\sl886\yii.bat</Command>
+      <Arguments>importindex</Arguments>
+      <WorkingDirectory>C:\project\yii2\sl886\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\yii2\sl886\yii.bat</Command>
+      <Arguments>importindex vix</Arguments>
+      <WorkingDirectory>C:\project\yii2\sl886\</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

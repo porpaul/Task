@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2023-05-04T11:46:19.1028421</Date>
+    <Author>admin</Author>
+    <URI>\GroupBuya - csv_groupbuy_tables</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <UserId>S-1-5-21-463758137-2802981960-3536458678-1002</UserId>
+      <LogonType>Password</LogonType>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+  </Settings>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2023-06-01T04:33:00</StartBoundary>
+      <ScheduleByMonth>
+        <Months>
+          <January />
+          <February />
+          <March />
+          <April />
+          <May />
+          <June />
+          <July />
+          <August />
+          <September />
+          <October />
+          <November />
+          <December />
+        </Months>
+        <DaysOfMonth>
+          <Day>1</Day>
+        </DaysOfMonth>
+      </ScheduleByMonth>
+    </CalendarTrigger>
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>C:\project\yii2\GroupBuya\exec\cvs_groupbuy_tables.bat</Command>
+      <WorkingDirectory>C:\project\yii2\GroupBuya\exec\</WorkingDirectory>
+    </Exec>
+    <Exec>
+      <Command>C:\project\yii2\SL886\exec\cvs_sl886_tables.bat</Command>
+      <WorkingDirectory>C:\project\yii2\SL886\exec\</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>
